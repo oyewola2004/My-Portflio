@@ -46,8 +46,11 @@ export default function Navbar() {
       isScrolled ? 'bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-800/50 py-4' : 'bg-transparent py-6'
     }`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-xl font-bold tracking-wider text-white">
-          HAMEED<span className="text-emerald-500">.</span>
+        <button 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
+          className="text-sm font-mono font-black tracking-widest uppercase text-white cursor-pointer"
+        >
+          OYEWOLA ABDULHAMEED<span className="text-emerald-400">.</span>
         </button>
 
         {/* Desktop Links */}
@@ -56,8 +59,8 @@ export default function Navbar() {
             <button
               key={link}
               onClick={() => handleScrollTo(link)}
-              className={`text-sm tracking-wide font-medium transition-colors ${
-                activeSection === link.toLowerCase() ? 'text-emerald-400' : 'text-zinc-400 hover:text-white'
+              className={`text-sm tracking-wide font-medium transition-colors cursor-pointer ${
+                activeSection === link.toLowerCase() ? 'text-emerald-400 font-bold' : 'text-zinc-400 hover:text-white'
               }`}
             >
               {link}
@@ -66,7 +69,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden text-white text-2xl" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden text-white text-2xl cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <FiX /> : <FiMenu />}
         </button>
       </div>
@@ -78,7 +81,7 @@ export default function Navbar() {
             <button
               key={link}
               onClick={() => handleScrollTo(link)}
-              className={`text-left text-2xl font-semibold ${
+              className={`text-left text-2xl font-semibold cursor-pointer ${
                 activeSection === link.toLowerCase() ? 'text-emerald-400' : 'text-zinc-400'
               }`}
             >

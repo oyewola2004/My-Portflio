@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   FiX, FiLayers, FiMaximize2, FiChevronLeft, 
-  FiChevronRight, FiEye, FiDownload, FiChevronDown, FiChevronUp 
+  FiChevronRight, FiEye, FiDownload, FiChevronDown, FiChevronUp, FiCheck
 } from 'react-icons/fi';
 
 const CATEGORIES = ['All', 'Logos', 'Branding', 'Flyers', 'UI/UX'];
@@ -13,46 +13,63 @@ const PROJECTS = [
     id: 'g-spark-summit',
     title: 'G-Spark Summit Branding',
     category: 'Branding',
-    image: '/G1.jpg', // Uses your first uploaded image as the main grid cover card
-    tools: ['CorelDRAW', 'Sigma', 'Canva'],
-    role: 'Lead Designer & Event Coordinator',
-    description: 'Designed and managed the end-to-end visual identity ecosystem for the G-Spark Summit, a milestone global developer tech conference focused on real-world workflow automation, AI development, and digital innovation.',
+    image: '/G1.jpg', 
+    tools: ['CorelDRAW', 'Figma', 'Canva'],
+    role: 'Lead Designer & Brand Manager',
+    description: 'As the Graphics Design and Branding Lead at G-SPARK, I oversee the creative direction of the organization, ensuring a consistent and impactful brand identity across all visual communications. I lead a team of designers in developing high-quality creative assets that strengthen brand recognition, support organizational goals, and engage target audiences.',
     bullets: [
-      'Visual System Archetype: Spearheaded the complete creative direction. Crafted abstract vector-based technical backgrounds, dynamic global brand tokens, and customized glassmorphic design configurations.',
-      'Marketing Collateral Ecosystem: Directed layout design for the summit\'s public-facing agenda, speaker announcements, profile kits, and master promotional flyers to sustain multi-channel engagement.'
+      'Lead and mentor the design team, coordinating creative projects and ensuring the delivery of high-quality visual content across digital and print platforms.',
+      'Drive the organizations branding strategy by maintaining brand consistency, developing visual identity guidelines, and overseeing the design of marketing and promotional materials.'
     ],
-    // UPDATED: Connected cleanly to your 8 public folder assets
     flyers: [
-      { src: '/G1.jpg', label: 'G-Spark Summit Design Core 01' },
       { src: '/G2.jpg', label: 'G-Spark Summit Design Core 02' },
       { src: '/G3.jpg', label: 'G-Spark Summit Design Core 03' },
       { src: '/G4.jpg', label: 'G-Spark Summit Design Core 04' },
-      { src: '/G5.jpg', label: 'G-Spark Summit Design Core 05' },
+      { src: '/G5.png', label: 'G-Spark Summit Design Core 05' },
       { src: '/G6.jpg', label: 'G-Spark Summit Design Core 06' },
       { src: '/G7.png', label: 'G-Spark Summit Design Core 07' },
-      { src: '/G8.png', label: 'G-Spark Summit Design Core 08' }
+      { src: '/G8.png', label: 'G-Spark Summit Design Core 08' },
+      { src: '/G9.png', label: 'G-Spark Summit Design Core 09' },
+      { src: '/G10.png', label: 'G-Spark Summit Design Core 10' },
+      { src: '/G11.png', label: 'G-Spark Summit Design Core 11' },
+      { src: '/G12.png', label: 'G-Spark Summit Design Core 12' },
+      { src: '/G13.png', label: 'G-Spark Summit Design Core 13' },
+      { src: '/G14.png', label: 'G-Spark Summit Design Core 14' },
+      { src: '/G15.png', label: 'G-Spark Summit Design Core 15' },
+      { src: '/G16.png', label: 'G-Spark Summit Design Core 16' },
+      { src: '/G17.png', label: 'G-Spark Summit Design Core 17' },
+      { src: '/G18.png', label: 'G-Spark Summit Design Core 18' },
+      { src: '/G19.png', label: 'G-Spark Summit Design Core 19' },
+      { src: '/G20.png', label: 'G-Spark Summit Design Core 20' },
+      { src: '/G21.png', label: 'G-Spark Summit Design Core 21' }
+
     ]
   },
   {
     id: 'merryloaded-gistplug',
-    title: 'Merryloaded GistPlug Visual Kit',
-    category: 'Logos',
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop',
-    tools: ['CorelDRAW', 'Photoshop'],
-    role: 'Brand Identity Architect',
-    description: 'Engineered a highly adaptable creative design matrix and visual toolkit for Merryloaded GistPlug to scale multi-platform content publishing across social ecosystems.',
+    title: 'Graphics Design Lead',
+    category: 'Branding',
+    image: '/HDefault.jpg',
+    tools: ['CorelDRAW', 'Photoshop', 'Canva'],
+    role: 'Lead Designer & Visual Strategist',
+    description: 'As the Graphics Design Lead of GDGD FUNAAB, I oversee the creation of visual content that strengthens our brand identity, promotes our initiatives, and effectively communicates our message to students and stakeholders. I am passionate about combining creativity with strategy to deliver impactful designs that inspire engagement and foster innovation within the community.',
     bullets: [
-      'Logo Engineering: Formulated a distinct minimalist logo mark engineered to remain perfectly crisp across digital avatars.',
-      'Assets Architecture: Supplied a cross-functional system of typography rules and assets ensuring fluid, cohesive content generation.'
+      'Lead the creation of visual content for community events, workshops, campaigns, and digital platforms, ensuring consistency with the organizations brand identity and objectives.',
+      'Collaborate with cross-functional teams to design engaging graphics that effectively communicate ideas, increase audience engagement, and enhance the overall visibility of GDGD FUNAAB initiatives.'
     ],
-    flyers: []
+    flyers: [
+      { src: '/H1.png', label: 'GDGD FUNAAB Design Core 01' },
+      { src: '/H2.png', label: 'GDGD FUNAAB Design Core 02' },
+      { src: '/H3.png', label: 'GDGD FUNAAB Design Core 03' },
+      { src: '/H4.png', label: 'GDGD FUNAAB Design Core 04' },
+    ]
   },
   {
     id: 'aoe-furnitures',
-    title: 'AOE Furnitures Storefront',
-    category: 'UI/UX',
+    title: 'AL IZZA INSTITUTE',
+    category: 'Branding',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop',
-    tools: ['Next.js', 'Figma', 'TailwindCSS'],
+    tools: ['Canva', 'CorelDRAW'],
     role: 'Lead UI/UX Architect',
     description: 'Engineered a highly scalable digital e-commerce storefront specification architecture mapping atomic layout tokens designed for high-end furniture retail environments.',
     bullets: [
@@ -173,6 +190,7 @@ const Portfolio = () => {
   const [isTextExpanded, setIsTextExpanded] = useState(false);
   const [showScrollDrawer, setShowScrollDrawer] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedImages, setSelectedImages] = useState([]);
 
   useEffect(() => {
     setCurrentPage(1);
@@ -182,6 +200,7 @@ const Portfolio = () => {
     setActiveImageIdx(0);
     setIsTextExpanded(false);
     setShowScrollDrawer(false);
+    setSelectedImages([]);
   }, [selectedProject]);
 
   const filteredProjects = PROJECTS.filter(project => {
@@ -211,6 +230,22 @@ const Portfolio = () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const triggerBulkDownload = () => {
+    selectedImages.forEach((src, index) => {
+      setTimeout(() => {
+        triggerDownload(src, `bulk-asset-${index + 1}`);
+      }, index * 250);
+    });
+  };
+
+  const toggleImageSelection = (src) => {
+    if (selectedImages.includes(src)) {
+      setSelectedImages(prev => prev.filter(item => item !== src));
+    } else {
+      setSelectedImages(prev => [...prev, src]);
+    }
   };
 
   return (
@@ -326,7 +361,7 @@ const Portfolio = () => {
           </div>
         )}
 
-        {/* Studio Modal Lightbox System */}
+        {/* Full Modal Lightbox Studio */}
         <AnimatePresence>
           {selectedProject && (
             <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6">
@@ -345,7 +380,7 @@ const Portfolio = () => {
 
                 <div className="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
                   
-                  {/* Left Metadata Specs */}
+                  {/* Left Descriptive Column */}
                   <div className="lg:col-span-5 space-y-6">
                     <div>
                       <span className="text-[10px] font-bold tracking-wider text-[#10b981] uppercase bg-[#10b981]/10 px-3 py-1 rounded-full">{selectedProject.role}</span>
@@ -387,7 +422,7 @@ const Portfolio = () => {
                     </div>
                   </div>
 
-                  {/* Right Immersive Media Core */}
+                  {/* Right Media Column */}
                   <div className="lg:col-span-7 space-y-4 w-full">
                     <div className="relative bg-[#16161a] border border-neutral-800 rounded-2xl overflow-hidden group aspect-[4/3] flex items-center justify-center">
                       <AnimatePresence mode="wait">
@@ -414,7 +449,7 @@ const Portfolio = () => {
                       </div>
                     </div>
 
-                    {/* Thumbnail Dynamic Cap Counter Rows */}
+                    {/* Thumbnail Active Link Bar */}
                     {selectedProject.flyers?.length > 1 && (
                       <div className="space-y-2">
                         <div className="flex justify-between items-center px-1">
@@ -452,25 +487,97 @@ const Portfolio = () => {
                   </div>
                 </div>
 
-                {/* Full Database Scroll Drawer overlay */}
+                {/* ========================================================================= */}
+                {/* MASONRY ARCHIVE DRAWER (HIGH-CONTRAST UPDATES)                             */}
+                {/* ========================================================================= */}
                 <AnimatePresence>
                   {showScrollDrawer && (
-                    <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 30 }} className="absolute inset-x-0 bottom-0 bg-[#0d0d0f] border-t border-neutral-800 rounded-t-3xl p-6 z-30 max-h-[40vh] overflow-y-auto">
-                      <div className="flex items-center justify-between mb-4 border-b border-neutral-800/60 pb-3">
-                        <div className="text-xs font-mono uppercase tracking-widest text-neutral-400 flex items-center gap-2"><FiEye className="text-[#10b981]" /> Full Image Archive Database</div>
-                        <button onClick={() => setShowScrollDrawer(false)} className="px-3 py-1 text-xs font-mono bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-400 hover:text-white cursor-pointer flex items-center gap-1">Collapse <FiChevronDown /></button>
+                    <motion.div 
+                      initial={{ opacity: 0, y: 50 }} 
+                      animate={{ opacity: 1, y: 0 }} 
+                      exit={{ opacity: 0, y: 50 }} 
+                      className="absolute inset-x-0 bottom-0 bg-[#0d0d0f] border-t border-neutral-800 rounded-t-3xl p-6 z-30 max-h-[60vh] overflow-y-auto custom-scrollbar flex flex-col"
+                    >
+                      <div className="sticky top-0 bg-[#0d0d0f]/95 backdrop-blur-md z-40 pb-4 mb-4 border-b border-neutral-800/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div className="text-xs font-mono uppercase tracking-widest text-neutral-400 flex items-center gap-2">
+                          <FiEye className="text-[#10b981]" /> Media File Archive Workspace
+                        </div>
+                        
+                        <div className="flex items-center gap-3">
+                          <AnimatePresence>
+                            {selectedImages.length > 0 && (
+                              <motion.button
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.9 }}
+                                onClick={triggerBulkDownload}
+                                className="px-3 py-1.5 text-xs font-bold font-mono bg-[#10b981] text-black rounded-lg shadow-lg shadow-[#10b981]/10 hover:bg-emerald-400 transition-all flex items-center gap-1.5 cursor-pointer"
+                              >
+                                <FiDownload size={13} /> Bulk Download ({selectedImages.length})
+                              </motion.button>
+                            )}
+                          </AnimatePresence>
+
+                          <button 
+                            onClick={() => setShowScrollDrawer(false)} 
+                            className="px-3 py-1.5 text-xs font-mono bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-400 hover:text-white cursor-pointer flex items-center gap-1"
+                          >
+                            Collapse Archive <FiChevronDown />
+                          </button>
+                        </div>
                       </div>
-                      <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-neutral-800">
-                        {selectedProject.flyers?.map((flyer, idx) => (
-                          <div key={idx} onClick={() => { setActiveImageIdx(idx); setShowScrollDrawer(false); }} className={`bg-[#16161a] border rounded-xl p-1.5 min-w-[140px] max-w-[140px] flex-shrink-0 cursor-pointer transition-all ${activeImageIdx === idx ? 'border-[#10b981] bg-neutral-900' : 'border-neutral-800 opacity-70 hover:opacity-100'}`}>
-                            <div className="aspect-[4/3] rounded-lg overflow-hidden relative bg-neutral-950"><img src={flyer.src} alt={flyer.label} className="w-full h-full object-cover" /></div>
-                            <p className="text-[10px] text-neutral-400 truncate mt-1.5 text-center px-1">{flyer.label}</p>
-                          </div>
-                        ))}
+
+                      {/* MASONRY LAYOUT FOR INDIVIDUAL CARDS */}
+                      <div className="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4 w-full">
+                        {selectedProject.flyers?.map((flyer, idx) => {
+                          const isChecked = selectedImages.includes(flyer.src);
+                          return (
+                            <div 
+                              key={idx} 
+                              onClick={() => setActiveImageIdx(idx)}
+                              className={`break-inside-avoid bg-[#16161a] border rounded-2xl p-2.5 flex flex-col relative group transition-all duration-300 hover:border-neutral-700/80 cursor-pointer ${activeImageIdx === idx ? 'border-neutral-700 bg-neutral-900/40 shadow-xl' : 'border-neutral-800/80'}`}
+                            >
+                              <div className="relative rounded-xl overflow-hidden w-full bg-neutral-950">
+                                <img 
+                                  src={flyer.src} 
+                                  alt={flyer.label} 
+                                  className="w-full h-auto object-contain block transition-transform duration-300 group-hover:scale-101"
+                                />
+
+                                {/* UPDATED: HIGH-CONTRAST CHECKBOX OVERLAY (PERMANENTLY VISIBLE) */}
+                                <div 
+                                  onClick={(e) => { e.stopPropagation(); toggleImageSelection(flyer.src); }}
+                                  className={`absolute top-3 right-3 w-7 h-7 rounded-full border backdrop-blur-md transition-all duration-200 z-10 flex items-center justify-center shadow-lg ${
+                                    isChecked 
+                                      ? 'bg-[#10b981] border-[#10b981] text-neutral-950 scale-100 font-black' 
+                                      : 'bg-neutral-950/80 border-neutral-700 text-neutral-400 hover:border-[#10b981]'
+                                  }`}
+                                >
+                                  {isChecked && <FiCheck size={16} strokeWidth={3} />}
+                                </div>
+
+                                {/* UPDATED: PERSISTENT INDIVIDUAL FILE DOWNLOAD LINK */}
+                                <button 
+                                  onClick={(e) => { e.stopPropagation(); triggerDownload(flyer.src, flyer.label); }} 
+                                  className="absolute bottom-3 right-3 p-2 bg-neutral-950/80 border border-neutral-800 text-neutral-400 hover:text-[#10b981] hover:border-[#10b981]/30 backdrop-blur-md transition-all duration-200 shadow-lg rounded-lg"
+                                  title="Download Single Image"
+                                >
+                                  <FiDownload size={13} />
+                                </button>
+                              </div>
+
+                              <p className="text-[11px] font-medium text-neutral-400 truncate mt-2 px-1 text-center">
+                                {flyer.label}
+                              </p>
+                            </div>
+                          );
+                        })}
                       </div>
+
                     </motion.div>
                   )}
                 </AnimatePresence>
+
               </motion.div>
             </div>
           )}

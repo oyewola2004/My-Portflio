@@ -1,123 +1,155 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  FiLinkedin, 
-  FiTwitter, 
-  FiInstagram, 
-  FiFacebook, 
-  FiUser, 
-  FiBriefcase, 
-  FiAward 
-} from 'react-icons/fi';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FiTarget, FiHeart, FiAward } from 'react-icons/fi';
 
-export default function About() {
-  // Pre-filled WhatsApp message template
-  const whatsappNumber = "2348132133006"; // Replace with your phone number (include country code, no + or spaces)
-  const templateMessage = encodeURIComponent("Hi, my name is ");
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${templateMessage}`;
+const About = () => {
+  // Animation configuration for sequential card entries
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 },
+    },
+  };
 
-  const socials = [
-    { icon: <FiLinkedin size={20} />, url: "www.linkedin.com/in/oyewola-hameed", label: "LinkedIn" },
-    { icon: <FiTwitter size={20} />, url: "https://x.com/hameed_oyewola", label: "X (Twitter)" },
-    { icon: <FiInstagram size={20} />, url: "https://instagram.com/hameed_oyewola", label: "Instagram" },
-    { icon: <FiFacebook size={20} />, url: "https://facebook.com/oyeyemihameed", label: "Facebook" },
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { type: "spring", stiffness: 100, damping: 25 } 
+    },
+  };
+
+  // Strategic values to accompany your narrative
+  const coreValues = [
+    {
+      icon: <FiTarget className="text-[#10b981]" size={20} />,
+      title: 'Strategic Intent',
+      desc: 'Research-driven design focused on driving tangible value and helping brands grow.',
+    },
+    {
+      icon: <FiHeart className="text-[#10b981]" size={20} />,
+      title: 'Meaningful Stories',
+      desc: 'Transforming abstract concepts into visual frameworks that capture lasting impressions.',
+    },
+    {
+      icon: <FiAward className="text-[#10b981]" size={20} />,
+      title: 'Attention to Detail',
+      desc: 'Precision layout construction across print design, social media matrices, and digital campaign specs.',
+    },
   ];
 
-  const stats = [
-    { icon: <FiBriefcase className="text-emerald-400" size={24} />, value: "5+ Years", label: "Experience" },
-    { icon: <FiAward className="text-emerald-400" size={24} />, value: "100+", label: "Projects Delivered" },
+  const specializationTags = [
+    'Branding', 
+    'Flyer Design', 
+    'Poster Design', 
+    'Social Media Graphics', 
+    'Print Design', 
+    'Creative Strategy'
   ];
 
   return (
-    <section id="about" className="relative py-24 bg-zinc-950 overflow-hidden border-t border-zinc-900">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+    <section id="about" className="py-24 bg-[#0a0a0c] text-white relative border-t border-neutral-900/40">
+      <div className="container mx-auto px-6 max-w-6xl">
         
-        {/* Section Heading */}
-        <div className="flex flex-col mb-16">
-          <div className="inline-flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-4 py-1.5 rounded-full text-zinc-400 text-sm mb-4 w-fit">
-            <FiUser className="text-emerald-400" /> About Me
-          </div>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white">
-            The Mind Behind <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
-              The Visual Architecture
+        {/* Split Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          {/* ========================================================================= */}
+          {/* LEFT SIDE: CORE PARAMETERS & OVERVIEW MARKS                               */}
+          {/* ========================================================================= */}
+          <div className="lg:col-span-4 space-y-4 lg:sticky lg:top-32">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#10b981]">
+              Identity Matrix
             </span>
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left Column: Bio & Socials */}
-          <div className="lg:col-span-7 space-y-6">
-            <p className="text-zinc-400 text-lg leading-relaxed">
-              I am a dedicated Graphics & Visual Systems Designer specializing in creating clean, 
-              high-impact design architectures that turn raw communication concepts into premium brand experiences.
-            </p>
-            <p className="text-zinc-500 text-base leading-relaxed">
-              Over the past 5 years, my workflow has focused on bridging the gap between raw functionality 
-              and striking visual cosmetics, delivering enterprise-ready assets engineered for growth.
-            </p>
-
-            {/* Social Media Icon Row */}
-            <div className="pt-4">
-              <h4 className="text-xs font-mono uppercase tracking-widest text-zinc-500 mb-3">Connect With Me</h4>
-              <div className="flex items-center gap-3">
-                {socials.map((social, i) => (
-                  <a
-                    key={i}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.label}
-                    className="flex items-center justify-center w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-emerald-400 hover:border-emerald-500/30 hover:bg-zinc-900/50 transition-all duration-300 group"
-                  >
-                    <div className="group-hover:scale-110 transition-transform duration-300">
-                      {social.icon}
-                    </div>
-                  </a>
-                ))}
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight mt-1 leading-tight">
+              Behind the <br />
+              Creative Process
+            </h2>
+            <div className="h-1 w-12 bg-gradient-to-r from-[#10b981] to-blue-500 rounded-full mt-4" />
+            
+            {/* Minimal Stat Node Block */}
+            <div className="pt-8 grid grid-cols-2 gap-4">
+              <div className="bg-[#16161a] border border-neutral-800/60 p-4 rounded-2xl text-left">
+                <div className="text-2xl font-black font-mono text-white">5+</div>
+                <div className="text-[11px] font-mono text-neutral-500 uppercase tracking-wider mt-1">Years Active</div>
+              </div>
+              <div className="bg-[#16161a] border border-neutral-800/60 p-4 rounded-2xl text-left">
+                <div className="text-2xl font-black font-mono text-[#10b981]">100%</div>
+                <div className="text-[11px] font-mono text-neutral-500 uppercase tracking-wider mt-1">Execution Rate</div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Quick Stats Metrics */}
-          <div className="lg:col-span-5 grid grid-cols-2 gap-4">
-            {stats.map((stat, i) => (
-              <div 
-                key={i}
-                className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800 backdrop-blur-md flex flex-col justify-between h-40"
-              >
-                <div className="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center">
-                  {stat.icon}
-                </div>
-                <div>
-                  <div className="text-3xl font-black text-white tracking-tight">{stat.value}</div>
-                  <div className="text-zinc-500 text-sm mt-1">{stat.label}</div>
-                </div>
+          {/* ========================================================================= */}
+          {/* RIGHT SIDE: BIO BRIEF & DYNAMIC VALUES                                    */}
+          {/* ========================================================================= */}
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="lg:col-span-8 space-y-8 text-left"
+          >
+            {/* Structural Narrative Block */}
+            <motion.div variants={itemVariants} className="space-y-4 text-neutral-400 text-sm sm:text-base leading-relaxed">
+              <p className="text-neutral-200 font-medium text-base sm:text-lg">
+                I am a Graphic Designer passionate about creating impactful visual experiences that help brands communicate, connect, and grow. With years of experience in branding, print design, social media creatives, and digital marketing materials, I focus on delivering designs that are both visually compelling and strategically effective.
+              </p>
+              <p>
+                My creative process combines research, innovation, and attention to detail to transform ideas into designs that capture attention and leave a lasting impression. Whether working on a brand identity, promotional campaign, or digital content, I strive to create solutions that bring value and tell meaningful stories.
+              </p>
+            </motion.div>
+
+            {/* Specialization Token Grid */}
+            <motion.div variants={itemVariants} className="space-y-3 pt-2">
+              <h4 className="text-xs font-bold font-mono text-neutral-500 uppercase tracking-widest">
+                Specializing in:
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {specializationTags.map((tag) => (
+                  <span 
+                    key={tag}
+                    className="text-xs font-semibold font-mono bg-[#16161a] border border-neutral-800 text-[#10b981] px-3.5 py-1.5 rounded-xl hover:border-[#10b981]/40 transition-all duration-300 shadow-sm"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
-            ))}
-          </div>
+            </motion.div>
+
+            {/* Strategic Value Proposition Matrix Cards */}
+            <motion.div 
+              variants={itemVariants}
+              className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6"
+            >
+              {coreValues.map((value, idx) => (
+                <div 
+                  key={idx} 
+                  className="bg-[#121214] border border-neutral-900 rounded-2xl p-5 hover:border-neutral-800 transition-all duration-300 flex flex-col justify-between space-y-4 group"
+                >
+                  <div className="p-2.5 bg-[#16161a] border border-neutral-800 rounded-xl w-fit group-hover:border-[#10b981]/20 transition-colors">
+                    {value.icon}
+                  </div>
+                  <div className="space-y-1">
+                    <h5 className="text-sm font-bold text-neutral-200 tracking-tight">
+                      {value.title}
+                    </h5>
+                    <p className="text-xs text-neutral-500 leading-relaxed">
+                      {value.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+
+          </motion.div>
+
         </div>
       </div>
-
-      {/* Persistent Floating WhatsApp Icon Button */}
-      <motion.a
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 1, type: "spring", stiffness: 260, damping: 20 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-emerald-500 text-zinc-950 rounded-full shadow-lg shadow-emerald-500/20 hover:bg-emerald-400 transition-colors group cursor-pointer"
-        title="Chat on WhatsApp"
-      >
-        <FaWhatsapp size={28} className="group-hover:rotate-12 transition-transform duration-300" />
-        
-        {/* Radar Ping Effect to attract attention */}
-        <span className="absolute inset-0 rounded-full bg-emerald-500/30 animate-ping -z-10 pointer-events-none" />
-      </motion.a>
     </section>
   );
-}
+};
+
+export default About;
