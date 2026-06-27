@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { FiSend, FiLoader, FiCheckCircle, FiAlertTriangle, FiMail, FiMapPin } from 'react-icons/fi';
 
 const Contact = () => {
@@ -67,7 +66,7 @@ const Contact = () => {
       } else {
         throw new Error('API transmission rejected');
       }
-    } catch (error) {
+    } catch {
       setStatus('error');
       // UPDATED: Natural error fallback text
       setFeedbackMessage('Something went wrong. Please try again or contact me directly via email.');
